@@ -39,8 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Responses\BaseResponse.cs" />
+    <Compile Include="Modules\Groups.cs" />
     <Compile Include="Modules\Networking\SurveyMonkeyRequest.cs" />
-    <Compile Include="Modules\SurveyService.cs" />
+    <Compile Include="Modules\Surveys.cs" />
+    <Compile Include="Modules\Users.cs" />
     <Compile Include="SurveyMonkey.cs" />
     <Compile Include="Models\Collector.cs" />
     <Compile Include="Models\Contact.cs" />

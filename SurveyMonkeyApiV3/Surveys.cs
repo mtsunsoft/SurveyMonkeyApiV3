@@ -7,14 +7,14 @@ using SurveyMonkeyApiV3.Models;
 using SurveyMonkeyApiV3.Models.Responses;
 using SurveyMonkeyApiV3.Modules.Networking;
 
-namespace SurveyMonkeyApiV3.Modules
+namespace SurveyMonkeyApiV3
 {
-    public class UserService
+    public class Surveys
     {
-        public static async Task<Me> GetSurveys()
+        public static async Task<List<Survey>> GetSurveys()
         {
-            Me response = await SurveyMonkeyRequest.GetRequest<Me>("/users/me");
-            return response;
+            SurveyResponse response = await SurveyMonkeyRequest.GetRequest<SurveyResponse>("/surveys");
+            return response.data;
         }
     }
 }

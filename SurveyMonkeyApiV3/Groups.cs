@@ -7,13 +7,13 @@ using SurveyMonkeyApiV3.Models;
 using SurveyMonkeyApiV3.Models.Responses;
 using SurveyMonkeyApiV3.Modules.Networking;
 
-namespace SurveyMonkeyApiV3.Services
+namespace SurveyMonkeyApiV3
 {
-    public class SurveyService 
+    public class Groups
     {
-        public static async Task<List<Survey>> GetSurveys()
+        public static async Task<List<Group>> GetSurveys()
         {
-            SurveyResponse response = await SurveyMonkeyRequest.GetRequest<SurveyResponse>("/surveys");
+            GroupResponse response = await SurveyMonkeyRequest.GetRequest<GroupResponse>("/groups");
             return response.data;
         }
     }
