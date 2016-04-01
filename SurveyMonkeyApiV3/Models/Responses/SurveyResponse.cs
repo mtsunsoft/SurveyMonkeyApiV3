@@ -5,7 +5,6 @@ using System.Text;
 
 namespace SurveyMonkeyApiV3.Models.Responses
 {
-    public class SurveyResponse : BaseResponse<Survey>
-    { 
-    }
+    public class SurveyResponse : BaseResponse<Survey>  { }
+    public class PageResponse : BaseResponse<Page> { }
 }

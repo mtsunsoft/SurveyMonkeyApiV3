@@ -6,11 +6,17 @@ using System.Text;
 namespace SurveyMonkeyApiV3.Models
 {
     public class Question
-    {
-        public int position { get; set; }
-        public string href { get; set; }
+    { 
         public string heading { get; set; }
-        public string id { get; set; }
+        public string family { get; set; }
+        public string subtype { get; set; }
+        public Answers answers { get; set; }
+        public bool visible { get; set; }
+        public string href { get; set; }
+        public List<Heading> headings { get; set; }
+        public int position { get; set; }
+        public long id { get; set; }
+        public bool forced_ranking { get; set; }
     }
 
     public class Heading
@@ -20,7 +26,10 @@ namespace SurveyMonkeyApiV3.Models
 
     public class Choice
     {
+        public long id { get; set; }
         public bool visible { get; set; }
+        public int weight { get; set; }
+        public bool is_na { get; set; }
         public bool required { get; set; }
         public string type { get; set; }
         public string text { get; set; }

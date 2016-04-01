@@ -8,7 +8,7 @@ namespace SurveyMonkeyApiV3.Models
     public class Collector
     {
         public string status { get; set; }
-        public string id { get; set; }
+        public long id { get; set; }
         public string type { get; set; }
         public string name { get; set; }
         public string thank_you_message { get; set; }
@@ -37,7 +37,7 @@ namespace SurveyMonkeyApiV3.Models
         public bool is_branding_enabled { get; set; }
         public string date_created { get; set; }
         public string type { get; set; }
-        public string id { get; set; }
+        public long id { get; set; }
         public string href { get; set; }
     }
 
@@ -49,8 +49,8 @@ namespace SurveyMonkeyApiV3.Models
         public string email { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
-        public Dictionary<string, string> custom_fields { get; set; } 
-        public string id { get; set; }
+        public Dictionary<string, string> custom_fields { get; set; }
+        public long id { get; set; }
         public string remove_link { get; set; }
         public Dictionary<string, string> extra_fields { get; set; } 
         public string survey_link { get; set; }

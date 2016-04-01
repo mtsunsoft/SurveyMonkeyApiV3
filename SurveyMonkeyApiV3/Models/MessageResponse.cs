@@ -12,16 +12,15 @@ namespace SurveyMonkeyApiV3.Models
         public string href { get; set; }
         public Dictionary<string, string> custom_variables { get; set; }
         public string ip_address { get; set; }
-        public List<SurveyPage> pages { get; set; }
+        public List<Page> pages { get; set; }
         public string date_modified { get; set; }
         public string response_status { get; set; }
         public string custom_value { get; set; }
-        public string id { get; set; }
+        public long id { get; set; }
         public string collector_id { get; set; }
         public string recipient_id { get; set; }
         public string date_created { get; set; }
-        public string survey_id { get; set; }
-
+        public long survey_id { get; set; } 
         public bool survey_completed { get; set; }
         public string email_address { get; set; }
         public object logic_path { get; set; }

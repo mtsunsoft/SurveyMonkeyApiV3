@@ -8,7 +8,7 @@ namespace SurveyMonkeyApiV3.Models
     public class Survey
     {
         public string href { get; set; }
-        public string id { get; set; }
+        public long id { get; set; }
         public string title { get; set; }
     }
 
@@ -29,19 +29,21 @@ namespace SurveyMonkeyApiV3.Models
         public int page_count { get; set; }
         public string date_created { get; set; }
         public string date_modified { get; set; }
-        public string id { get; set; }
+        public long id { get; set; }
         public string href { get; set; }
         public ButtonsText buttons_text { get; set; }
+        public List<Page> pages { get; set; }
     }
 
-    public class SurveyPage
+    public class Page
     {
         public string title { get; set; }
         public string description { get; set; }
         public int position { get; set; }
         public int question_count { get; set; }
-        public string id { get; set; }
+        public long id { get; set; }
         public string href { get; set; }
+        public List<Question> questions { get; set; } 
     }
 
 

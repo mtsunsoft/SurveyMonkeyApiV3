@@ -7,14 +7,14 @@ namespace SurveyMonkeyApiV3.Models
 {
     public class Member
     {
-        public string id { get; set; }
+        public long id { get; set; }
         public string username { get; set; }
         public string href { get; set; }
     }
 
     public class MemberDetail
-    { 
-        public string id { get; set; }
+    {
+        public long id { get; set; }
         public string username { get; set; }
         public string email { get; set; }
         public string type { get; set; }
