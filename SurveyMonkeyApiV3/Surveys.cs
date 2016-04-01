@@ -39,6 +39,24 @@ namespace SurveyMonkeyApiV3
         {
             Page response = await SurveyMonkeyRequest.GetRequest<Page>(string.Format("/surveys/{0}/pages/{1}", surveyId, pageId));
             return response;
+        } 
+
+        public static async Task<List<Question>> GetSurveyPageQuestions(long surveyId, long pageId)
+        {
+            QuestionsResponse response = await SurveyMonkeyRequest.GetRequest<QuestionsResponse>(string.Format("/surveys/{0}/pages/{1}/questions", surveyId, pageId));
+            return response.data;
+        } 
+
+        public static async Task<Question> GetSurveyPageQuestionDetails(long surveyId, long pageId, long questionId)
+        {
+            Question response = await SurveyMonkeyRequest.GetRequest<Question>(string.Format("/surveys/{0}/pages/{1}/questions/{2}", surveyId, pageId, questionId));
+            return response;
         }
+
+        public static async Task<List<Collector>> GetSurveyCollectors(long surveyId)
+        {
+            BaseResponse<Collector> response = await SurveyMonkeyRequest.GetRequest<BaseResponse<Collector>>(string.Format("/surveys/{0}/collectors", surveyId));
+            return response.data;
+        } 
     }
 }
