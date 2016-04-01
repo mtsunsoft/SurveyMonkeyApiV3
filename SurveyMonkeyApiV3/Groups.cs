@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SurveyMonkeyApiV3.Models;
-using SurveyMonkeyApiV3.Models.Responses;
+using SurveyMonkeyApiV3.Models; 
 using SurveyMonkeyApiV3.Modules.Networking;
+using SurveyMonkeyApiV3.Networking;
 
 namespace SurveyMonkeyApiV3
 {
@@ -13,7 +13,7 @@ namespace SurveyMonkeyApiV3
     {
         public static async Task<List<Group>> GetGroups()
         {
-            GroupResponse response = await SurveyMonkeyRequest.GetRequest<GroupResponse>("/groups");
+            BaseResponse<Group> response = await SurveyMonkeyRequest.GetRequest<BaseResponse<Group>>("/groups");
             return response.data;
         }
 
@@ -25,7 +25,7 @@ namespace SurveyMonkeyApiV3
 
         public static async Task<List<Member>> GetGroupMembers(long groupId)
         {
-            MemberResponse response = await SurveyMonkeyRequest.GetRequest<MemberResponse>("/groups/{0}/members");
+            BaseResponse<Member> response = await SurveyMonkeyRequest.GetRequest<BaseResponse<Member>>("/groups/{0}/members");
             return response.data;
         }
 

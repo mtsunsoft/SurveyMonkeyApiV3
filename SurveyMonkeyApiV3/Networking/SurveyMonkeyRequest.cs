@@ -4,8 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-using SurveyMonkeyApiV3.Models.Responses;
+using System.Threading.Tasks; 
 using Newtonsoft.Json;
 
 namespace SurveyMonkeyApiV3.Modules.Networking

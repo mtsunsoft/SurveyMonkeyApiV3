@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic; 
 using System.Threading.Tasks;
-using SurveyMonkeyApiV3.Models;
-using SurveyMonkeyApiV3.Models.Responses;
+using SurveyMonkeyApiV3.Models; 
 using SurveyMonkeyApiV3.Modules.Networking;
+using SurveyMonkeyApiV3.Networking;
 
 namespace SurveyMonkeyApiV3
 {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace SurveyMonkeyApiV3.Models.Responses
+namespace SurveyMonkeyApiV3.Networking
 {
     public class BaseResponse<T>
     {

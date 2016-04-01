@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SurveyMonkeyApiV3.Models
 {
-    public class MessageResponse
+    public class Response
     {
         public int total_time { get; set; }
         public string collection_mode { get; set; }

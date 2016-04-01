@@ -35,10 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="Models\Requests\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Responses\BaseResponse.cs" />
+    <Compile Include="Collectors.cs" />
+    <Compile Include="Networking\BaseResponse.cs" />
     <Compile Include="Groups.cs" />
     <Compile Include="Networking\SurveyMonkeyRequest.cs" />
     <Compile Include="Surveys.cs" />
@@ -50,14 +50,8 @@
     <Compile Include="Models\Me.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Question.cs" />
-    <Compile Include="Models\Responses\ContactResponse.cs" />
-    <Compile Include="Models\Responses\GroupResponse.cs" />
-    <Compile Include="Models\Responses\MemberResponse.cs" />
-    <Compile Include="Models\Responses\QuestionsResponse.cs" />
-    <Compile Include="Models\Responses\SurveyResponse.cs" />
-    <Compile Include="Models\Responses\SurveyTemplateResponse.cs" />
     <Compile Include="Models\Survey.cs" />
-    <Compile Include="Models\MessageResponse.cs" />
+    <Compile Include="Models\Response.cs" />
     <Compile Include="Models\SurveyTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
