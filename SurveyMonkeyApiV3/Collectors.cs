@@ -37,8 +37,7 @@ namespace SurveyMonkeyApiV3
         {
             BaseResponse<Recipient> response = await SurveyMonkeyRequest.GetRequest<BaseResponse<Recipient>>(string.Format("/collectors/{0}/messages/{1}/recipients", collectorId, messageId));
             return response.data;
-        }
-
+        } 
 
         public static async Task<Recipient> CreateCollectorMessageRecipient(long collectorId, long messageId, CreateRecipient recipient)
         {

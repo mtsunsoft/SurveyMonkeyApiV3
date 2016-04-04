@@ -43,12 +43,11 @@ namespace SurveyMonkeyApiV3.Models
 
     public class CreateMessage
     {
-        public string type { get; set; }
-        public string recipient_status { get; set; }
+        public string type { get; set; } 
         public string subject { get; set; }
         public string body_text { get; set; }
         public string body_html { get; set; }
-        public string is_branding_enabled { get; set; }
+        public bool is_branding_enabled { get; set; }
     }
 
 

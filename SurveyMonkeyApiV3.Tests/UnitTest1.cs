@@ -45,6 +45,25 @@ namespace SurveyMonkeyApiV3.Tests
             Assert.IsNotNull(questionDetails);
             Thread.Sleep(500);
 
+            List<Collector> collectors = await Surveys.GetSurveyCollectors(surveys[0].id);
+            Assert.AreNotEqual(0, collectors.Count);
+
+            CreateMessage createMsg = new CreateMessage()
+            {
+                body_html = "[SurveyLink], [FooterLink] and [OptOutLink]",
+                subject = "new survey",
+                type = "invite",
+                body_text = "[SurveyLink], [FooterLink] and [OptOutLink]",
+                is_branding_enabled = false
+            };
+
+            Message message = await Collectors.CreateCollectorMessage(collectors[0].id, createMsg);
+            Assert.IsNotNull(message);
+
+            List<Message> messages = await Collectors.GetCollectorMessages(collectors[0].id);
+            Assert.AreNotEqual(0, messages.Count);
+
+
         }
     }
 }
