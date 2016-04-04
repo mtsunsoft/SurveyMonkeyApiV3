@@ -50,5 +50,11 @@ namespace SurveyMonkeyApiV3
             Recipient response = await SurveyMonkeyRequest.GetRequest<Recipient>(string.Format("/collectors/{0}/messages/{1}/recipients/{2}", collectorId, messageId, recipientId));
             return response;
         }
+
+        public static async Task<List<Response>> GetCollectorResponses(long collectorId)
+        {
+            BaseResponse<Response> response = await SurveyMonkeyRequest.GetRequest<BaseResponse<Response>>(string.Format("/collectors/{0}/responses", collectorId));
+            return response.data;
+        } 
     }
 }

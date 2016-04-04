@@ -25,7 +25,7 @@ namespace SurveyMonkeyApiV3.Models
         public bool open { get; set; }
         public string date_created { get; set; }
         public bool password_enabled { get; set; }
-        public string href { get; set; }
+        public string href { get; set; } 
     }
 
     public class Message
