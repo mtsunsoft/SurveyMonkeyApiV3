@@ -41,6 +41,16 @@ namespace SurveyMonkeyApiV3.Models
         public string href { get; set; }
     }
 
+    public class CreateMessage
+    {
+        public string type { get; set; }
+        public string recipient_status { get; set; }
+        public string subject { get; set; }
+        public string body_text { get; set; }
+        public string body_html { get; set; }
+        public string is_branding_enabled { get; set; }
+    }
+
 
     public class Recipient
     {
@@ -55,5 +65,15 @@ namespace SurveyMonkeyApiV3.Models
         public Dictionary<string, string> extra_fields { get; set; } 
         public string survey_link { get; set; }
         public string href { get; set; }
+    }
+
+    public class CreateRecipient
+    {
+        public string contact_id { get; set; }
+        public string email { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public Dictionary<string, string> custom_fields { get; set; }
+        public Dictionary<string, string> extra_fields { get; set; } 
     }
 }

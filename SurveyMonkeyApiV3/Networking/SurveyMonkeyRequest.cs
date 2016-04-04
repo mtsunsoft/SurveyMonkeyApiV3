@@ -32,9 +32,13 @@ namespace SurveyMonkeyApiV3.Modules.Networking
                     Dictionary<object, object> parameterDict = parameters as Dictionary<object, object>;
                     paramStr = JsonConvert.SerializeObject(parameterDict);
                 }
+                else if (parameters is string)
+                {
+                    paramStr = parameters.ToString();
+                }
                 else
                 {
-                    paramStr = parameters as string;
+                    paramStr = JsonConvert.SerializeObject(parameters);
                 }
                 content = new StringContent(paramStr, Encoding.UTF8, RequestContentTypeValue);
             }
@@ -78,7 +82,7 @@ namespace SurveyMonkeyApiV3.Modules.Networking
             }
         }
 
-        public static async Task<T> PostRequest<T>(string url, Dictionary<object, object> bodyParams, Dictionary<object, object> urlParams = null )
+        public static async Task<T> PostRequest<T>(string url, object bodyParams, Dictionary<object, object> urlParams = null )
         {
             using (HttpClient client = new HttpClient())
             {
