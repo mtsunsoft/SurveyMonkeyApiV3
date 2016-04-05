@@ -16,6 +16,14 @@ namespace SurveyMonkeyApiV3.Networking
 
         private static string RequestContentTypeValue = "application/json";
 
+        private static void Throttle()
+        {
+            using (EventWaitHandle tmpEvent = new ManualResetEvent(false))
+            {
+                tmpEvent.WaitOne(TimeSpan.FromMilliseconds(SurveyMonkey.Throttle));
+            } 
+        }
+
         private static async Task<T> DeserializeServerResponse<T>(HttpResponseMessage response)
         {
             string responseStr = await response.Content.ReadAsStringAsync();
@@ -60,12 +68,14 @@ namespace SurveyMonkeyApiV3.Networking
 
         public static async Task<T> DeleteRequest<T>(string url, Dictionary<object, object> urlParams = null)
         {
+            Throttle();
             using (HttpClient client = new HttpClient())
             {
                 AddDefaultHeaders(client);
                 if(urlParams == null) urlParams = new Dictionary<object, object>();
                 urlParams.Add("api_key", SurveyMonkey.ApiKey);
                 HttpResponseMessage response = await client.DeleteAsync(BaseUrl + url + "?" + GetParamsFromDict(urlParams));
+
                 return await DeserializeServerResponse<T>(response);
             }
         }
@@ -73,6 +83,7 @@ namespace SurveyMonkeyApiV3.Networking
 
         public static async Task<T> GetRequest<T>(string url, Dictionary<object, object> urlParams = null )
         {
+            Throttle();
             using (HttpClient client = new HttpClient())
             {
                 AddDefaultHeaders(client);
@@ -85,6 +96,7 @@ namespace SurveyMonkeyApiV3.Networking
 
         public static async Task<T> PostRequest<T>(string url, object bodyParams, Dictionary<object, object> urlParams = null )
         {
+            Throttle();
             using (HttpClient client = new HttpClient())
             {
                 AddDefaultHeaders(client);
@@ -97,6 +109,7 @@ namespace SurveyMonkeyApiV3.Networking
         }
         public static async Task<T> PutRequest<T>(string url, Dictionary<object, object> bodyParams, Dictionary<object,object> urlParams = null )
         {
+            Throttle();
             using (HttpClient client = new HttpClient())
             {
                 AddDefaultHeaders(client);
