@@ -39,7 +39,12 @@ namespace SurveyMonkeyApiV3.Networking
                 if (parameters is Dictionary<object, object>)
                 {
                     Dictionary<object, object> parameterDict = parameters as Dictionary<object, object>;
-                    paramStr = JsonConvert.SerializeObject(parameterDict);
+                    paramStr = JsonConvert.SerializeObject(parameterDict,
+                            Newtonsoft.Json.Formatting.None,
+                            new JsonSerializerSettings
+                            {
+                                NullValueHandling = NullValueHandling.Ignore
+                            });
                 }
                 else if (parameters is string)
                 {
@@ -47,7 +52,11 @@ namespace SurveyMonkeyApiV3.Networking
                 }
                 else
                 {
-                    paramStr = JsonConvert.SerializeObject(parameters);
+                    paramStr = JsonConvert.SerializeObject(parameters, 
+                            Formatting.None, 
+                            new JsonSerializerSettings { 
+                                NullValueHandling = NullValueHandling.Ignore
+                            });
                 }
                 content = new StringContent(paramStr, Encoding.UTF8, RequestContentTypeValue);
             }
@@ -107,6 +116,7 @@ namespace SurveyMonkeyApiV3.Networking
                 return await DeserializeServerResponse<T>(response);
             }
         }
+
         public static async Task<T> PutRequest<T>(string url, Dictionary<object, object> bodyParams, Dictionary<object,object> urlParams = null )
         {
             Throttle();
