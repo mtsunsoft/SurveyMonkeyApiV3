@@ -9,6 +9,6 @@ namespace SurveyMonkeyApiV3
     {
         public static string ApiKey { get; set; }
         public static string AuthToken { get; set; }
-        public static int Throttle = 1000;
+        public static int Throttle = 600;
     }
 }
