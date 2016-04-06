@@ -44,6 +44,12 @@ namespace SurveyMonkeyApiV3
             return response;
         }
 
+        public static async Task<SentMessage> SendMessageToRecipients(long collectorId, long messageId)
+        {
+            SentMessage response = await SurveyMonkeyRequest.PostRequest<SentMessage>(string.Format("/collectors/{0}/messages/{1}/send", collectorId, messageId), new {});
+            return response;
+        }
+
         public static async Task<Recipient> GetCollectorMessageRecipientDetails(long collectorId, long messageId, long recipientId)
         {
             Recipient response = await SurveyMonkeyRequest.GetRequest<Recipient>(string.Format("/collectors/{0}/messages/{1}/recipients/{2}", collectorId, messageId, recipientId));

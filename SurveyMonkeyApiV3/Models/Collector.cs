@@ -75,4 +75,15 @@ namespace SurveyMonkeyApiV3.Models
         public Dictionary<string, string> custom_fields { get; set; }
         public Dictionary<string, string> extra_fields { get; set; } 
     }
+
+    public class SentMessage
+    {
+        public bool is_scheduled { get; set; }
+        public string scheduled_date { get; set; }
+        public string body { get; set; }
+        public string subject { get; set; }
+        public List<string> recipients { get; set; }
+        public object recipient_status { get; set; }
+        public string type { get; set; }
+    }
 }
