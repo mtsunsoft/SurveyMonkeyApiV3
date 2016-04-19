@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyMonkeyApiV3", "SurveyMonkeyApiV3\SurveyMonkeyApiV3.csproj", "{6F230D19-7ABD-4083-914A-706A0A3A8A11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyMonkeyApiV3.Tests", "SurveyMonkeyApiV3.Tests\SurveyMonkeyApiV3.Tests.csproj", "{2318DF6A-5709-4907-A946-C8615CA7F324}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{173A382C-AA80-49F9-8000-0DC8C114E013}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
