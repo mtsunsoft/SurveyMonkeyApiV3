@@ -30,7 +30,15 @@ namespace SurveyMonkeyApiV3
         {
             Message response = await SurveyMonkeyRequest.PostRequest<Message>(string.Format("/collectors/{0}/messages/", collectorId), message);
             return response;
+        }
+
+
+        public static async Task<Message> ModifyCollectorMessage(long collectorId, ModifyMessage message)
+        {
+            Message response = await SurveyMonkeyRequest.PatchRequest<Message>(string.Format("/collectors/{0}/messages/", collectorId), message);
+            return response;
         } 
+
 
         public static async Task<List<Recipient>> GetCollectorMessageRecipients(long collectorId, long messageId)
         {
