@@ -35,10 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collectors.cs" />
+    <Compile Include="Helpers\HttpClientExtensions.cs" />
     <Compile Include="Networking\BaseResponse.cs" />
     <Compile Include="Groups.cs" />
     <Compile Include="Networking\SurveyMonkeyRequest.cs" />
