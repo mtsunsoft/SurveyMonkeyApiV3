@@ -33,9 +33,9 @@ namespace SurveyMonkeyApiV3
         }
 
 
-        public static async Task<Message> ModifyCollectorMessage(long collectorId, ModifyMessage message)
+        public static async Task<Message> ModifyCollectorMessage(long collectorId, long messageId, ModifyMessage message)
         {
-            Message response = await SurveyMonkeyRequest.PatchRequest<Message>(string.Format("/collectors/{0}/messages/", collectorId), message);
+            Message response = await SurveyMonkeyRequest.PatchRequest<Message>(string.Format("/collectors/{0}/messages/{1}", collectorId, messageId), message);
             return response;
         } 
 

@@ -52,8 +52,7 @@ namespace SurveyMonkeyApiV3.Models
     }
 
     public class ModifyMessage
-    {
-        public long id { get; set; } 
+    { 
         public string subject { get; set; }
         public string body_text { get; set; } 
         public string body_html { get; set; }
