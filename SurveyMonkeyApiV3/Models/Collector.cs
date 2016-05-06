@@ -35,7 +35,7 @@ namespace SurveyMonkeyApiV3.Models
         public string subject { get; set; }
         public string body { get; set; }
         public bool is_branding_enabled { get; set; }
-        public string date_created { get; set; }
+        public DateTime date_created { get; set; }
         public string type { get; set; }
         public long id { get; set; }
         public string href { get; set; }
@@ -46,6 +46,15 @@ namespace SurveyMonkeyApiV3.Models
         public string type { get; set; } 
         public string subject { get; set; }
         public string body_text { get; set; }
+        public string body_html { get; set; }
+        public bool is_branding_enabled { get; set; }
+        public string recipient_status { get; set; }
+    }
+
+    public class ModifyMessage
+    { 
+        public string subject { get; set; }
+        public string body_text { get; set; } 
         public string body_html { get; set; }
         public bool is_branding_enabled { get; set; }
     }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks; 
 using Newtonsoft.Json;
+using SurveyMonkeyApiV3.Helpers;
 
 namespace SurveyMonkeyApiV3.Networking
 {
@@ -127,6 +128,20 @@ namespace SurveyMonkeyApiV3.Networking
                 urlParams.Add("api_key", SurveyMonkey.ApiKey);
                 HttpContent content = GetHttpContent(bodyParams);
                 HttpResponseMessage response = await client.PutAsync(BaseUrl + url + "?" + GetParamsFromDict(urlParams), content);
+                return await DeserializeServerResponse<T>(response);
+            }
+        }
+
+        public static async Task<T> PatchRequest<T>(string url, object bodyParams, Dictionary<object, object> urlParams = null)
+        {
+            Throttle();
+            using (HttpClient client = new HttpClient())
+            {
+                AddDefaultHeaders(client);
+                if (urlParams == null) urlParams = new Dictionary<object, object>();
+                urlParams.Add("api_key", SurveyMonkey.ApiKey);
+                HttpContent content = GetHttpContent(bodyParams);
+                HttpResponseMessage response = await client.PatchAsync(BaseUrl + url + "?" + GetParamsFromDict(urlParams), content);
                 return await DeserializeServerResponse<T>(response);
             }
         }
