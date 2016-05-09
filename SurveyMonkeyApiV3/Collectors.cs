@@ -19,6 +19,18 @@ namespace SurveyMonkeyApiV3
             return response.data;
         }
 
+        public static async Task<List<Recipient>> GetCollectorRecipients(long collectorId)
+        {
+            BaseResponse<Recipient> response = await SurveyMonkeyRequest.GetRequest<BaseResponse<Recipient>>(string.Format("/collectors/{0}/recipients", collectorId));
+            return response.data;
+        }
+
+        public static async Task<Recipient> GetCollectorRecipient(long collectorId, long recipientId)
+        {
+            Recipient response = await SurveyMonkeyRequest.GetRequest<Recipient>(string.Format("/collectors/{0}/recipients/{1}", collectorId, recipientId));
+            return response;
+        }
+
         public static async Task<Message> GetCollectorMessageDetails(long collectorId, long messageId)
         {
             Message response = await SurveyMonkeyRequest.GetRequest<Message>(string.Format("/collectors/{0}/messages/{1}", collectorId, messageId));
