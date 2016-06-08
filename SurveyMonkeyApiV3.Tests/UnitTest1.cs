@@ -60,7 +60,18 @@ namespace SurveyMonkeyApiV3.Tests
             List<Message> messages = await Collectors.GetCollectorMessages(collectors[0].id);
             Assert.AreNotEqual(0, messages.Count);
 
+            var recipientData = new CreateRecipient() { email = "non.existent@hotmail.com", first_name = "non", last_name = "existent" };
+            var collectorRecipient = await Collectors.CreateCollectorMessageRecipient(collectors[0].id, message.id, recipientData);
+            Assert.IsNotNull(collectorRecipient);
+            Assert.AreNotEqual(0, collectorRecipient.id);
 
+            var sentMsg = await Collectors.SendMessageToRecipients(collectors[0].id, message.id);
+            Assert.IsNotNull(sentMsg);
+            Assert.AreNotEqual(false, sentMsg.is_scheduled);
+
+            var recipient = await Collectors.GetCollectorRecipient(collectors[0].id, collectorRecipient.id);
+            Assert.IsNotNull(recipient);
+            Assert.AreNotEqual(0, recipient.id);
         }
     }
 }

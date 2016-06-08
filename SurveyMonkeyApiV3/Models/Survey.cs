@@ -23,7 +23,7 @@ namespace SurveyMonkeyApiV3.Models
     public class SurveyDetails
     {
         public string title { get; set; }
-        public List<string> custom_variables { get; set; }
+        //public List<string> custom_variables { get; set; }
         public string language { get; set; }
         public int question_count { get; set; }
         public int page_count { get; set; }
