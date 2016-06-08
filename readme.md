@@ -1,8 +1,9 @@
-# SurveyMonkeyApiV3
+# SurveyMonkeyApiV3 - .Net v.4.0
 C# Version 3 of the SurveyMonkey API
 
 This project is active thanks to the effort of [@chrislott](https://github.com/chrislott).
 I forked it just to add some initial documentation.
+I will keep it around, updated with changes from @crislott 's version, but with .Net v.4 instead of v.4.5.
 
 ## Requirements
 
